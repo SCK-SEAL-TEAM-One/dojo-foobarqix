@@ -1,26 +1,27 @@
 package endkarn
 
-import "strconv"
+import (
+	"strconv"
+	"strings"
+)
 
 func ComputeFooBarQix(input string) interface{} {
-	int, _ := strconv.Atoi(input)
-	if input == "3" {
-		return "FooFoo"
+	number, _ := strconv.Atoi(input)
+	numberTextSet := [3]string{"3", "5", "7"}
+	numberSet := [3]int{3, 5, 7}
+	stringSet := [3]string{"Foo", "Bar", "Qix"}
+	var output string
+
+	for i := 0; i < len(numberSet); i++ {
+		if number%numberSet[i] == 0 {
+			output += stringSet[i]
+		}
+		if strings.Contains(input, numberTextSet[i]) {
+			output += stringSet[i]
+		}
 	}
-	if int%3 == 0 {
-		return "Foo"
+	if len(output) == 0 {
+		return input
 	}
-	if input == "5" {
-		return "BarBar"
-	}
-	if int%5 == 0 {
-		return "Bar"
-	}
-	if input == "7" {
-		return "QixQix"
-	}
-	if int%7 == 0 {
-		return "Qix"
-	}
-	return input
+	return output
 }

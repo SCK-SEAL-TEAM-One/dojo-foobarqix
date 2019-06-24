@@ -71,3 +71,13 @@ func Test_FooBarQix_Put_14_Should_Return_Qix(t *testing.T) {
 		t.Errorf(" Expected value %v but got %v ", expectedResult, actualResult)
 	}
 }
+
+func Test_FooBarQix_Put_15_Should_Return_FooBarBar(t *testing.T) {
+	expectedResult := "FooBarBar"
+
+	actualResult := ComputeFooBarQix("15")
+
+	if expectedResult != actualResult {
+		t.Errorf(" Expected value %v but got %v ", expectedResult, actualResult)
+	}
+}
