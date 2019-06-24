@@ -81,3 +81,43 @@ func Test_FooBarQix_Put_15_Should_Return_FooBarBar(t *testing.T) {
 		t.Errorf(" Expected value %v but got %v ", expectedResult, actualResult)
 	}
 }
+
+func Test_FooBarQix_Put_21_Should_Return_FooQix(t *testing.T) {
+	expectedResult := "FooQix"
+
+	actualResult := ComputeFooBarQix("21")
+
+	if expectedResult != actualResult {
+		t.Errorf(" Expected value %v but got %v ", expectedResult, actualResult)
+	}
+}
+
+func Test_FooBarQix_Put_33_Should_Return_FooFooFoo(t *testing.T) {
+	expectedResult := "FooFooFoo"
+
+	actualResult := ComputeFooBarQix("33")
+
+	if expectedResult != actualResult {
+		t.Errorf(" Expected value %v but got %v ", expectedResult, actualResult)
+	}
+}
+
+func Test_FooBarQix_Put_51_Should_Return_FooBar(t *testing.T) {
+	expectedResult := "FooBar"
+
+	actualResult := ComputeFooBarQix("51")
+
+	if expectedResult != actualResult {
+		t.Errorf(" Expected value %v but got %v ", expectedResult, actualResult)
+	}
+}
+
+//func Test_FooBarQix_Put_53_Should_Return_BarFoo(t *testing.T) {
+//	expectedResult := "BarFoo"
+//
+//	actualResult := ComputeFooBarQix("53")
+//
+//	if expectedResult != actualResult {
+//		t.Errorf(" Expected value %v but got %v ", expectedResult, actualResult)
+//	}
+//}
